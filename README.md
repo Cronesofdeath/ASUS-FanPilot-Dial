@@ -21,7 +21,7 @@ To try the interface with simulated fans, open PowerShell in the extracted folde
 | Requirement | Details |
 | --- | --- |
 | Windows | Windows 10 or 11 x64 with .NET Framework 4.7.2 or later |
-| ASUS laptop | ASUS System Control Interface and a working compatible diagnostic interface. The ASUS TUF F15 FX506LH is the development laptop. Additional ASUS models need physical validation. |
+| ASUS laptop | ASUS System Control Interface and a working compatible diagnostic interface. Compatibility varies by laptop model, firmware, and driver. |
 | Local dependency files | Supported copies of ASUS `AsusWinIO64.dll` and Microsoft PsExec. The setup script checks their SHA-256 hashes before copying them. |
 | NVIDIA GPU telemetry | A readable NVIDIA GPU temperature is required for RPM calibration. |
 | G-Helper | Optional. Required when using **Follow G-Helper**. |
