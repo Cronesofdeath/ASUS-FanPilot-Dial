@@ -1,0 +1,18 @@
+.local/
+.vs/
+bin/
+obj/
+dist/
+test-output/
+dependencies/*.dll
+dependencies/*.exe
+*.user
+*.suo
+*.log
+*.zip
+*.exe
+*.dll
+package-hashes.json
+
+Local build/
+personal-curves.json

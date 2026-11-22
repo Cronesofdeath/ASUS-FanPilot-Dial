@@ -1,0 +1,130 @@
+<Window
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  Title="ASUS FanPilot Dial — Settings"
+  Width="580"
+  Height="445"
+  MinWidth="500"
+  MinHeight="380"
+  WindowStartupLocation="CenterScreen"
+  ShowInTaskbar="True"
+  Background="{DynamicResource StudioCanvas}"
+  Foreground="{DynamicResource StudioText}"
+  FontFamily="Segoe UI"
+  FontSize="13"
+  UseLayoutRounding="True"
+  SnapsToDevicePixels="True">
+  <Border BorderBrush="{DynamicResource StudioLine}" BorderThickness="1" Padding="22,14,22,18">
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="48"/>
+        <RowDefinition/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition/>
+          <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Settings" FontSize="22" FontWeight="SemiBold" VerticalAlignment="Top" Margin="0,5,0,0"/>
+        <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Top"><Button x:Name="SettingsMinimize" Content="−" Style="{StaticResource CaptionButton}" FontSize="18" ToolTip="Minimize" AutomationProperties.Name="Minimize settings window"/><Button
+          x:Name="SettingsClose" Content="×" ToolTip="Close" AutomationProperties.Name="Close settings" FontSize="21" Style="{StaticResource CloseCaption}"/></StackPanel>
+      </Grid>
+      <TabControl
+        x:Name="SettingsTabs"
+        Grid.Row="1"
+        Background="Transparent"
+        BorderThickness="0"
+        Foreground="{DynamicResource StudioText}"
+        Padding="0,18,0,0">
+        <TabItem x:Name="GeneralTab" Header="_General">
+          <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+          <StackPanel>
+            <DockPanel Margin="0,0,0,12"><ComboBox DockPanel.Dock="Right" x:Name="ThemeChoice" Width="155" AutomationProperties.Name="Color theme">
+              <ComboBoxItem Content="Carbon"/><ComboBoxItem Content="Midnight Blue"/><ComboBoxItem Content="Fjord" Visibility="Collapsed"/><ComboBoxItem Content="Amethyst" Visibility="Collapsed"/><ComboBoxItem Content="Sandstone"/><ComboBoxItem Content="Bordeaux" Visibility="Collapsed"/><ComboBoxItem Content="Graphite"/>
+            </ComboBox><TextBlock Text="Palette" FontWeight="SemiBold" VerticalAlignment="Center"/></DockPanel>
+            <Grid Margin="0,0,0,5">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+              </Grid.ColumnDefinitions>
+              <StackPanel>
+                <TextBlock Text="Start with Windows" FontWeight="SemiBold"/>
+                <TextBlock Text="Minimized to tray. Manual control off." Style="{StaticResource Detail}"/>
+              </StackPanel>
+              <CheckBox x:Name="Startup" Style="{StaticResource Switch}" Grid.Column="1" AutomationProperties.Name="Start with Windows" VerticalAlignment="Center"/>
+            </Grid>
+            <Border BorderBrush="{DynamicResource StudioLine}" BorderThickness="0,0,0,1" Margin="0,0,0,5"/>
+            <Grid Margin="0,0,0,5">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+              </Grid.ColumnDefinitions>
+              <StackPanel>
+                <TextBlock Text="Close to tray" FontWeight="SemiBold"/>
+                <TextBlock Text="Exit stops the app and releases fan control." Style="{StaticResource Detail}"/>
+              </StackPanel>
+              <CheckBox
+                x:Name="CloseToTray" Style="{StaticResource Switch}"
+                Grid.Column="1"
+                AutomationProperties.Name="Close to tray"
+                IsChecked="True"
+                VerticalAlignment="Center"/>
+            </Grid>
+            <Border BorderBrush="{DynamicResource StudioLine}" BorderThickness="0,0,0,1" Margin="0,0,0,5"/>
+            <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+              </Grid.ColumnDefinitions>
+              <StackPanel>
+                <TextBlock Text="Animations" FontWeight="SemiBold"/>
+                <TextBlock Text="Fan gauges and panel transitions." Style="{StaticResource Detail}"/>
+              </StackPanel>
+              <CheckBox
+                x:Name="Animations" Style="{StaticResource Switch}"
+                Grid.Column="1"
+                AutomationProperties.Name="Animations"
+                IsChecked="True"
+                VerticalAlignment="Center"/>
+            </Grid>
+          </StackPanel></ScrollViewer>
+        </TabItem>
+        <TabItem x:Name="KeyboardTab" Header="_Keyboard shortcut">
+          <StackPanel>
+            <CheckBox x:Name="ShortcutEnabled" Content="Enable global shortcut" IsChecked="True" Margin="0,0,0,20"/>
+            <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+              </Grid.ColumnDefinitions>
+              <StackPanel VerticalAlignment="Center">
+                <TextBlock Text="Toggle manual control" FontWeight="SemiBold"/>
+                <TextBlock Text="Active while minimized to tray." Style="{StaticResource Detail}"/>
+              </StackPanel>
+              <Button x:Name="Shortcut" Grid.Column="1" Content="Ctrl + Alt + F" MinWidth="145"/>
+            </Grid>
+            <TextBlock
+              x:Name="ShortcutHint"
+              Text="Select a shortcut. Hold 1–3 keys, then release."
+              Foreground="{DynamicResource StudioAccent}"
+              TextWrapping="Wrap"
+              FontSize="12"
+              Margin="0,14,0,0"
+              MinHeight="34"/>
+            <Border BorderBrush="{DynamicResource StudioLine}" BorderThickness="0,0,0,1" Margin="0,12,0,12"/>
+            <TextBlock Text="Single-key shortcuts also trigger during typing. System-reserved keys may be unavailable." Style="{StaticResource Detail}"/>
+          </StackPanel>
+        </TabItem>
+      </TabControl>
+      <Button
+        x:Name="SettingsDone" Style="{StaticResource PrimaryButton}"
+        Grid.Row="2"
+        Content="_Close"
+        HorizontalAlignment="Right"
+        MinWidth="85"
+        IsDefault="True"
+        Margin="0,12,0,0"/>
+    </Grid>
+  </Border>
+</Window>
