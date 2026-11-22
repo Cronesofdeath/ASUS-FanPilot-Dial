@@ -1,6 +1,6 @@
 MIT License
 
-Original AsusFanControl: Copyright (c) 2023 Karmel0x
+Copyright (c) 2023 Karmel0x
 Copyright (c) 2026 FanPilot contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -20,7 +20,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-AsusWinIO64.dll belongs to ASUSTeK COMPUTER INC. and PsExec.exe belongs to
-Microsoft/Sysinternals. These unmodified third-party binaries retain their
-own terms; the MIT permission above does not relicense them.
